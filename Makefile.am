@@ -14,3 +14,19 @@
 #   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA. */
 #
 
+AM_YFLAGS = -d -p qfe
+AM_LFLAGS = -i -Pqfe -olex.yy.c
+bin_PROGRAMS = QFE
+QFE_SOURCES = \
+	cseputils.cpp \
+	ddlstmts.cpp \
+	parsequery.cpp \
+	returnedrows.cpp \
+	sendcsep.cpp \
+	server.cpp \
+	socketio.cpp \
+	qfelexer.lpp \
+	qfeparser.ypp
+BUILT_SOURCES = qfeparser.cpp qfelexer.cpp qfeparser.h
+QFE_CPPFLAGS = -I$(HOME)/genii/export/include -I/usr/include/libxml2
+

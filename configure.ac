@@ -26,6 +26,8 @@ AM_INIT_AUTOMAKE
 # Checks for programs.
 AC_PROG_CXX
 AC_PROG_CC
+AM_PROG_LEX
+AC_PROG_YACC
 
 # Checks for libraries.
 
