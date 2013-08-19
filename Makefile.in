@@ -218,6 +218,16 @@ QFE_LDFLAGS = -L$(infinidb_lib) \
 	-lcacheutils \
 	-ludfsdk \
 	-lddlpackage \
+	-lwindowfunction \
+	-lrowgroup \
+	-ljoiner \
+	-lcommon \
+	-lmysqlcl_idb \
+	-lsnmpmanager \
+	-lquerystats \
+	-loamcpp \
+	-lloggingcpp \
+	-lmulticast \
 	-lidbboot \
 	-lxml2 \
 	-ldl
