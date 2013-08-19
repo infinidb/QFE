@@ -38,6 +38,9 @@ using namespace boost;
 
 #ifndef _MSC_VER
 #include "config.h"
+#if defined(__linux__) && !defined(STRERROR_R_CHAR_P)
+#define STRERROR_R_CHAR_P 1
+#endif
 #endif
 
 #include "exceptclasses.h"

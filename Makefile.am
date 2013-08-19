@@ -28,5 +28,22 @@ QFE_SOURCES = \
 	qfelexer.lpp \
 	qfeparser.ypp
 BUILT_SOURCES = qfeparser.cpp qfelexer.cpp qfeparser.h
-QFE_CPPFLAGS = -I$(HOME)/genii/export/include -I/usr/include/libxml2
+QFE_CPPFLAGS = -I$(infnidb_include) -I/usr/include/libxml2
+QFE_LDFLAGS = -L$(infinidb_lib) \
+	-lexecplan \
+	-lconfigcpp \
+	-lbrm \
+	-lmessageqcpp \
+	-lrwlock \
+	-lfuncexp \
+	-ljoblist \
+	-lboost_idb \
+	-lcompress \
+	-ldataconvert \
+	-lcacheutils \
+	-ludfsdk \
+	-lddlpackage \
+	-lidbboot \
+	-lxml2 \
+	-ldl
 
