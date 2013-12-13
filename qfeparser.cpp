@@ -1503,7 +1503,7 @@ yyreduce:
 				execplan::SRCP rcp((yyvsp[(1) - (1)].rcp));
 				ParserCSEP->returnedCols().push_back(rcp);
 				(yyval.cp) = 0;
-			;}
+			}
     break;
 
   case 4:
@@ -1512,7 +1512,7 @@ yyreduce:
 				execplan::SRCP rcp((yyvsp[(3) - (3)].rcp));
 				ParserCSEP->returnedCols().push_back(rcp);
 				(yyval.cp) = 0;
-			;}
+			}
     break;
 
   case 5:
@@ -1525,7 +1525,7 @@ yyreduce:
 				sc->tableAlias(sc->tableName());
 				sc->alias(execplan::make_tcn(sc->schemaName(), sc->tableName(), sc->columnName()).toString());
 				(yyval.rcp) = (yyvsp[(1) - (1)].rcp);
-			;}
+			}
     break;
 
   case 7:
@@ -1534,12 +1534,12 @@ yyreduce:
 			execplan::AggregateColumn* ag = new execplan::AggregateColumn(execplan::AggregateColumn::agname2num(*((yyvsp[(1) - (4)].cp))), (yyvsp[(3) - (4)].rcp));
 			delete (yyvsp[(1) - (4)].cp);
 			(yyval.rcp) = ag;
-		;}
+		}
     break;
 
   case 9:
 #line 102 "qfeparser.ypp"
-    { (yyval.cp) = 0; ;}
+    { (yyval.cp) = 0; }
     break;
 
   case 10:
@@ -1547,7 +1547,7 @@ yyreduce:
     {
 			delete (yyvsp[(2) - (2)].cp);
 			(yyval.cp) = (yyvsp[(1) - (2)].cp);
-		;}
+		}
     break;
 
   case 11:
@@ -1555,12 +1555,12 @@ yyreduce:
     {
 			delete (yyvsp[(2) - (2)].cp);
 			(yyval.cp) = (yyvsp[(1) - (2)].cp);
-		;}
+		}
     break;
 
   case 12:
 #line 116 "qfeparser.ypp"
-    { (yyval.cp) = 0; ;}
+    { (yyval.cp) = 0; }
     break;
 
   case 15:
@@ -1581,7 +1581,7 @@ yyreduce:
 			ParserCSEP->tableList(tl);
 			delete sc;
 			(yyval.cp) = 0;
-		;}
+		}
     break;
 
   case 19:
@@ -1596,7 +1596,7 @@ yyreduce:
 				delete sc;
 				delete (yyvsp[(2) - (3)].cp);
 				(yyval.cp) = 0;
-			;}
+			}
     break;
 
   case 20:
@@ -1613,7 +1613,7 @@ yyreduce:
 				delete sc;
 				delete (yyvsp[(4) - (5)].cp);
 				(yyval.cp) = 0;
-			;}
+			}
     break;
 
   case 21:
@@ -1627,7 +1627,7 @@ yyreduce:
 			//cerr << "inside parser: " << *sc << endl;
 			delete (yyvsp[(1) - (1)].cp);
 			(yyval.rcp) = sc;
-		;}
+		}
     break;
 
   case 22:
@@ -1642,7 +1642,7 @@ yyreduce:
 			delete (yyvsp[(1) - (3)].cp);
 			delete (yyvsp[(3) - (3)].cp);
 			(yyval.rcp) = sc;
-		;}
+		}
     break;
 
   case 23:
@@ -1658,14 +1658,14 @@ yyreduce:
 			delete (yyvsp[(3) - (5)].cp);
 			delete (yyvsp[(5) - (5)].cp);
 			(yyval.rcp) = sc;
-		;}
+		}
     break;
 
   case 25:
 #line 219 "qfeparser.ypp"
     {
 			(yyval.cp) = (yyvsp[(2) - (3)].cp);
-		;}
+		}
     break;
 
   case 26:
@@ -1674,7 +1674,7 @@ yyreduce:
 			pair<int, string>* p = new pair<int, string>(1, *((yyvsp[(1) - (1)].cp)));
 			delete (yyvsp[(1) - (1)].cp);
 			(yyval.cvp) = p;
-		;}
+		}
     break;
 
   case 27:
@@ -1683,17 +1683,17 @@ yyreduce:
 			pair<int, string>* p = new pair<int, string>(0, *((yyvsp[(1) - (1)].cp)));
 			delete (yyvsp[(1) - (1)].cp);
 			(yyval.cvp) = p;
-		;}
+		}
     break;
 
   case 29:
 #line 240 "qfeparser.ypp"
-    { YYERROR; ;}
+    { YYERROR; }
     break;
 
   case 31:
 #line 245 "qfeparser.ypp"
-    { delete (yyvsp[(3) - (3)].rcp); ;}
+    { delete (yyvsp[(3) - (3)].rcp); }
     break;
 
   case 33:
@@ -1701,17 +1701,17 @@ yyreduce:
     {
 			delete (yyvsp[(1) - (1)].cp);
 			(yyval.rcp) = 0;
-		;}
+		}
     break;
 
   case 35:
 #line 258 "qfeparser.ypp"
-    { YYERROR; ;}
+    { YYERROR; }
     break;
 
   case 39:
 #line 267 "qfeparser.ypp"
-    { (yyval.cp) = 0; ;}
+    { (yyval.cp) = 0; }
     break;
 
   case 40:
@@ -1720,7 +1720,7 @@ yyreduce:
 				delete (yyvsp[(2) - (2)].cp);
 				YYERROR;
 				(yyval.cp) = 0;
-			;}
+			}
     break;
 
   case 41:
@@ -1730,7 +1730,7 @@ yyreduce:
 				delete (yyvsp[(4) - (4)].cp);
 				YYERROR;
 				(yyval.cp) = 0;
-			;}
+			}
     break;
 
 

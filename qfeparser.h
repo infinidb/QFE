@@ -85,7 +85,7 @@ typedef union YYSTYPE
 	std::pair<int, std::string>* cvp;
 }
 /* Line 1529 of yacc.c.  */
-#line 89 "qfeparser.hpp"
+#line 89 "qfeparser.h"
 	YYSTYPE;
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
 # define YYSTYPE_IS_DECLARED 1
