@@ -16,7 +16,7 @@
 
 AM_YFLAGS = -d -p qfe
 AM_LFLAGS = -i -Pqfe -olex.yy.c
-bin_PROGRAMS = QFE
+bin_PROGRAMS = QFE cli
 QFE_SOURCES = \
 	cseputils.cpp \
 	ddlstmts.cpp \
@@ -58,4 +58,7 @@ QFE_LDFLAGS =  -L$(infinidb_lib) \
 	-lidbboot \
 	-lxml2 \
 	-ldl
+cli_SOURCES = cli.cpp socketio.cpp
+cli_CPPFLAGS = $(QFE_CPPFLAGS)
+cli_LDFLAGS =  $(QFE_LDFLAGS)
 

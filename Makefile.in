@@ -50,7 +50,7 @@ POST_INSTALL = :
 NORMAL_UNINSTALL = :
 PRE_UNINSTALL = :
 POST_UNINSTALL = :
-bin_PROGRAMS = QFE$(EXEEXT)
+bin_PROGRAMS = QFE$(EXEEXT) cli$(EXEEXT)
 subdir = .
 DIST_COMMON = README $(am__configure_deps) $(srcdir)/Makefile.am \
 	$(srcdir)/Makefile.in $(srcdir)/config.h.in \
@@ -76,6 +76,9 @@ am_QFE_OBJECTS = QFE-cseputils.$(OBJEXT) QFE-ddlstmts.$(OBJEXT) \
 	QFE-qfeparser.$(OBJEXT)
 QFE_OBJECTS = $(am_QFE_OBJECTS)
 QFE_LDADD = $(LDADD)
+am_cli_OBJECTS = cli-cli.$(OBJEXT) cli-socketio.$(OBJEXT)
+cli_OBJECTS = $(am_cli_OBJECTS)
+cli_LDADD = $(LDADD)
 DEFAULT_INCLUDES = -I. -I$(srcdir) -I.
 depcomp = $(SHELL) $(top_srcdir)/depcomp
 am__depfiles_maybe = depfiles
@@ -90,8 +93,8 @@ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
 CCLD = $(CC)
 LINK = $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
-SOURCES = $(QFE_SOURCES)
-DIST_SOURCES = $(QFE_SOURCES)
+SOURCES = $(QFE_SOURCES) $(cli_SOURCES)
+DIST_SOURCES = $(QFE_SOURCES) $(cli_SOURCES)
 ETAGS = etags
 CTAGS = ctags
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
@@ -234,6 +237,9 @@ QFE_LDFLAGS = -L$(infinidb_lib) \
 	-lxml2 \
 	-ldl
 
+cli_SOURCES = cli.cpp socketio.cpp
+cli_CPPFLAGS = $(QFE_CPPFLAGS)
+cli_LDFLAGS = $(QFE_LDFLAGS)
 all: $(BUILT_SOURCES) config.h
 	$(MAKE) $(AM_MAKEFLAGS) all-am
 
@@ -320,6 +326,9 @@ qfeparser.h: qfeparser.cpp
 QFE$(EXEEXT): $(QFE_OBJECTS) $(QFE_DEPENDENCIES) 
 	@rm -f QFE$(EXEEXT)
 	$(CXXLINK) $(QFE_LDFLAGS) $(QFE_OBJECTS) $(QFE_LDADD) $(LIBS)
+cli$(EXEEXT): $(cli_OBJECTS) $(cli_DEPENDENCIES) 
+	@rm -f cli$(EXEEXT)
+	$(CXXLINK) $(cli_LDFLAGS) $(cli_OBJECTS) $(cli_LDADD) $(LIBS)
 
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)
@@ -336,6 +345,8 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/QFE-sendcsep.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/QFE-server.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/QFE-socketio.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cli-cli.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cli-socketio.Po@am__quote@
 
 .cpp.o:
 @am__fastdepCXX_TRUE@	if $(CXXCOMPILE) -MT $@ -MD -MP -MF "$(DEPDIR)/$*.Tpo" -c -o $@ $<; \
@@ -476,6 +487,34 @@ QFE-qfeparser.obj: qfeparser.cpp
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='qfeparser.cpp' object='QFE-qfeparser.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(QFE_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o QFE-qfeparser.obj `if test -f 'qfeparser.cpp'; then $(CYGPATH_W) 'qfeparser.cpp'; else $(CYGPATH_W) '$(srcdir)/qfeparser.cpp'; fi`
+
+cli-cli.o: cli.cpp
+@am__fastdepCXX_TRUE@	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(cli_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT cli-cli.o -MD -MP -MF "$(DEPDIR)/cli-cli.Tpo" -c -o cli-cli.o `test -f 'cli.cpp' || echo '$(srcdir)/'`cli.cpp; \
+@am__fastdepCXX_TRUE@	then mv -f "$(DEPDIR)/cli-cli.Tpo" "$(DEPDIR)/cli-cli.Po"; else rm -f "$(DEPDIR)/cli-cli.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='cli.cpp' object='cli-cli.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(cli_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o cli-cli.o `test -f 'cli.cpp' || echo '$(srcdir)/'`cli.cpp
+
+cli-cli.obj: cli.cpp
+@am__fastdepCXX_TRUE@	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(cli_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT cli-cli.obj -MD -MP -MF "$(DEPDIR)/cli-cli.Tpo" -c -o cli-cli.obj `if test -f 'cli.cpp'; then $(CYGPATH_W) 'cli.cpp'; else $(CYGPATH_W) '$(srcdir)/cli.cpp'; fi`; \
+@am__fastdepCXX_TRUE@	then mv -f "$(DEPDIR)/cli-cli.Tpo" "$(DEPDIR)/cli-cli.Po"; else rm -f "$(DEPDIR)/cli-cli.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='cli.cpp' object='cli-cli.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(cli_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o cli-cli.obj `if test -f 'cli.cpp'; then $(CYGPATH_W) 'cli.cpp'; else $(CYGPATH_W) '$(srcdir)/cli.cpp'; fi`
+
+cli-socketio.o: socketio.cpp
+@am__fastdepCXX_TRUE@	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(cli_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT cli-socketio.o -MD -MP -MF "$(DEPDIR)/cli-socketio.Tpo" -c -o cli-socketio.o `test -f 'socketio.cpp' || echo '$(srcdir)/'`socketio.cpp; \
+@am__fastdepCXX_TRUE@	then mv -f "$(DEPDIR)/cli-socketio.Tpo" "$(DEPDIR)/cli-socketio.Po"; else rm -f "$(DEPDIR)/cli-socketio.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='socketio.cpp' object='cli-socketio.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(cli_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o cli-socketio.o `test -f 'socketio.cpp' || echo '$(srcdir)/'`socketio.cpp
+
+cli-socketio.obj: socketio.cpp
+@am__fastdepCXX_TRUE@	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(cli_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT cli-socketio.obj -MD -MP -MF "$(DEPDIR)/cli-socketio.Tpo" -c -o cli-socketio.obj `if test -f 'socketio.cpp'; then $(CYGPATH_W) 'socketio.cpp'; else $(CYGPATH_W) '$(srcdir)/socketio.cpp'; fi`; \
+@am__fastdepCXX_TRUE@	then mv -f "$(DEPDIR)/cli-socketio.Tpo" "$(DEPDIR)/cli-socketio.Po"; else rm -f "$(DEPDIR)/cli-socketio.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='socketio.cpp' object='cli-socketio.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(cli_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o cli-socketio.obj `if test -f 'socketio.cpp'; then $(CYGPATH_W) 'socketio.cpp'; else $(CYGPATH_W) '$(srcdir)/socketio.cpp'; fi`
 
 .lpp.cpp:
 	$(LEXCOMPILE) $<
