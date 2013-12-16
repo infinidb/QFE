@@ -78,7 +78,7 @@
 
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
 typedef union YYSTYPE
-#line 31 "qfeparser.ypp"
+#line 46 "qfeparser.ypp"
 {
 	execplan::ReturnedColumn* rcp;
 	std::string* cp;
