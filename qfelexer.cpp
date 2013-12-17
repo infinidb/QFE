@@ -470,6 +470,21 @@ char *yytext;
 #line 1 "qfelexer.lpp"
 #define INITIAL 0
 #line 2 "qfelexer.lpp"
+/* Copyright (C) 2013 Calpont Corp.
+
+   This program is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation; version 2 of the License.
+
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+
+   You should have received a copy of the GNU General Public License along
+   with this program; if not, write to the Free Software Foundation, Inc.,
+   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA. */
+
 #include <utility>
 #include <string>
 #include "returnedcolumn.h"
@@ -486,7 +501,7 @@ extern std::string* newstr(const char* cp);
 #define YY_NO_UNPUT 1
 #define CCONST 1
 
-#line 490 "qfelexer.cpp"
+#line 505 "qfelexer.cpp"
 
 /* Macros after this point can all be overridden by user definitions in
  * section 1.
@@ -637,10 +652,10 @@ YY_DECL
 	register char *yy_cp = NULL, *yy_bp = NULL;
 	register int yy_act;
 
-#line 28 "qfelexer.lpp"
+#line 43 "qfelexer.lpp"
 
 
-#line 644 "qfelexer.cpp"
+#line 659 "qfelexer.cpp"
 
 	if ( yy_init )
 		{
@@ -733,155 +748,155 @@ do_action:	/* This label is used only to access EOF actions. */
 	{ /* beginning of action switch */
 case 1:
 YY_RULE_SETUP
-#line 30 "qfelexer.lpp"
+#line 45 "qfelexer.lpp"
 { return QFEP_SELECT; }
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 31 "qfelexer.lpp"
+#line 46 "qfelexer.lpp"
 { return QFEP_FROM; }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 32 "qfelexer.lpp"
+#line 47 "qfelexer.lpp"
 { return QFEP_WHERE; }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 33 "qfelexer.lpp"
+#line 48 "qfelexer.lpp"
 { return GROUPBY; }
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 34 "qfelexer.lpp"
+#line 49 "qfelexer.lpp"
 { qfelval.cp = newstr(qfetext); return LOGICOP; }
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 35 "qfelexer.lpp"
+#line 50 "qfelexer.lpp"
 { qfelval.cp = newstr(qfetext); return LOGICOP; }
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 36 "qfelexer.lpp"
+#line 51 "qfelexer.lpp"
 { return LIMIT; }
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 37 "qfelexer.lpp"
+#line 52 "qfelexer.lpp"
 { return ORDERBY; }
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 38 "qfelexer.lpp"
+#line 53 "qfelexer.lpp"
 { return ASC; }
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 39 "qfelexer.lpp"
+#line 54 "qfelexer.lpp"
 { return DESC; }
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 40 "qfelexer.lpp"
+#line 55 "qfelexer.lpp"
 { return AS; }
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 41 "qfelexer.lpp"
+#line 56 "qfelexer.lpp"
 { qfelval.cp = newstr(qfetext); return FUNC; }
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 42 "qfelexer.lpp"
+#line 57 "qfelexer.lpp"
 { qfelval.cp = newstr(qfetext); return FUNC; }
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 43 "qfelexer.lpp"
+#line 58 "qfelexer.lpp"
 { qfelval.cp = newstr(qfetext); return FUNC; }
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 44 "qfelexer.lpp"
+#line 59 "qfelexer.lpp"
 { qfelval.cp = newstr(qfetext); return FUNC; }
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 46 "qfelexer.lpp"
+#line 61 "qfelexer.lpp"
 { qfelval.cp = newstr(qfetext); return OBJNAME; }
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 48 "qfelexer.lpp"
+#line 63 "qfelexer.lpp"
 { BEGIN(CCONST); }
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 49 "qfelexer.lpp"
+#line 64 "qfelexer.lpp"
 { qfelval.cp = newstr(qfetext); return CHAR_CONST; }
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 50 "qfelexer.lpp"
+#line 65 "qfelexer.lpp"
 { BEGIN(INITIAL); }
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 52 "qfelexer.lpp"
+#line 67 "qfelexer.lpp"
 { qfelval.cp = newstr(qfetext); return INT_CONST; }
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 54 "qfelexer.lpp"
+#line 69 "qfelexer.lpp"
 { qfelval.cp = newstr(qfetext); return RELOP; }
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 55 "qfelexer.lpp"
+#line 70 "qfelexer.lpp"
 { qfelval.cp = newstr(qfetext); return RELOP; }
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 56 "qfelexer.lpp"
+#line 71 "qfelexer.lpp"
 { qfelval.cp = newstr(qfetext); return RELOP; }
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 57 "qfelexer.lpp"
+#line 72 "qfelexer.lpp"
 { qfelval.cp = newstr(qfetext); return RELOP; }
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 58 "qfelexer.lpp"
+#line 73 "qfelexer.lpp"
 { qfelval.cp = newstr(qfetext); return RELOP; }
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 59 "qfelexer.lpp"
+#line 74 "qfelexer.lpp"
 { qfelval.cp = newstr(qfetext); return RELOP; }
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
-#line 61 "qfelexer.lpp"
+#line 76 "qfelexer.lpp"
 {}
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
-#line 62 "qfelexer.lpp"
+#line 77 "qfelexer.lpp"
 { qfelineno++; }
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
-#line 64 "qfelexer.lpp"
+#line 79 "qfelexer.lpp"
 { return qfetext[0]; }
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
-#line 66 "qfelexer.lpp"
+#line 81 "qfelexer.lpp"
 ECHO;
 	YY_BREAK
-#line 885 "qfelexer.cpp"
+#line 900 "qfelexer.cpp"
 			case YY_STATE_EOF(INITIAL):
 			case YY_STATE_EOF(CCONST):
 				yyterminate();
@@ -1762,4 +1777,4 @@ int main()
 	return 0;
 	}
 #endif
-#line 66 "qfelexer.lpp"
+#line 81 "qfelexer.lpp"

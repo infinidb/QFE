@@ -78,14 +78,14 @@
 
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
 typedef union YYSTYPE
-#line 31 "qfeparser.ypp"
+#line 46 "qfeparser.ypp"
 {
 	execplan::ReturnedColumn* rcp;
 	std::string* cp;
 	std::pair<int, std::string>* cvp;
 }
 /* Line 1529 of yacc.c.  */
-#line 89 "qfeparser.hpp"
+#line 89 "qfeparser.h"
 	YYSTYPE;
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
 # define YYSTYPE_IS_DECLARED 1

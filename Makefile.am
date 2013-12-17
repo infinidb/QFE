@@ -16,7 +16,7 @@
 
 AM_YFLAGS = -d -p qfe
 AM_LFLAGS = -i -Pqfe -olex.yy.c
-bin_PROGRAMS = QFE
+bin_PROGRAMS = QFE cli
 QFE_SOURCES = \
 	cseputils.cpp \
 	ddlstmts.cpp \
@@ -28,8 +28,8 @@ QFE_SOURCES = \
 	qfelexer.lpp \
 	qfeparser.ypp
 BUILT_SOURCES = qfeparser.cpp qfelexer.cpp qfeparser.h
-QFE_CPPFLAGS = -I$(infnidb_include) -I/usr/include/libxml2
-QFE_LDFLAGS = -L$(infinidb_lib) \
+QFE_CPPFLAGS = -I$(infinidb_include) -I/usr/include/libxml2
+QFE_LDFLAGS =  -L$(infinidb_lib) \
 	-lexecplan \
 	-lconfigcpp \
 	-lbrm \
@@ -37,6 +37,8 @@ QFE_LDFLAGS = -L$(infinidb_lib) \
 	-lrwlock \
 	-lfuncexp \
 	-ljoblist \
+	-lidbdatafile \
+	-lthreadpool \
 	-lboost_idb \
 	-lcompress \
 	-ldataconvert \
@@ -56,4 +58,7 @@ QFE_LDFLAGS = -L$(infinidb_lib) \
 	-lidbboot \
 	-lxml2 \
 	-ldl
+cli_SOURCES = cli.cpp socketio.cpp
+cli_CPPFLAGS = $(QFE_CPPFLAGS)
+cli_LDFLAGS =  $(QFE_LDFLAGS)
 

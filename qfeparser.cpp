@@ -114,6 +114,21 @@
 /* Copy the first part of user declarations.  */
 #line 1 "qfeparser.ypp"
 
+/* Copyright (C) 2013 Calpont Corp.
+
+   This program is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation; version 2 of the License.
+
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+
+   You should have received a copy of the GNU General Public License along
+   with this program; if not, write to the Free Software Foundation, Inc.,
+   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA. */
+
 #include <iostream>
 #include <string>
 #include <utility>
@@ -162,14 +177,14 @@ class ReturnedColumn;
 
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
 typedef union YYSTYPE
-#line 31 "qfeparser.ypp"
+#line 46 "qfeparser.ypp"
 {
 	execplan::ReturnedColumn* rcp;
 	std::string* cp;
 	std::pair<int, std::string>* cvp;
 }
 /* Line 193 of yacc.c.  */
-#line 173 "qfeparser.cpp"
+#line 188 "qfeparser.cpp"
 	YYSTYPE;
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
 # define YYSTYPE_IS_DECLARED 1
@@ -182,7 +197,7 @@ typedef union YYSTYPE
 
 
 /* Line 216 of yacc.c.  */
-#line 186 "qfeparser.cpp"
+#line 201 "qfeparser.cpp"
 
 #ifdef short
 # undef short
@@ -480,11 +495,11 @@ static const yytype_int8 yyrhs[] =
 /* YYRLINE[YYN] -- source line where rule number YYN was defined.  */
 static const yytype_uint16 yyrline[] =
 {
-       0,    55,    55,    63,    69,    77,    87,    90,    98,   102,
-     103,   108,   116,   117,   120,   124,   144,   147,   148,   151,
-     163,   179,   190,   202,   217,   218,   224,   230,   238,   239,
-     243,   244,   248,   249,   256,   257,   261,   262,   263,   267,
-     268,   274
+       0,    70,    70,    78,    84,    92,   102,   105,   113,   117,
+     118,   123,   131,   132,   135,   139,   159,   162,   163,   166,
+     178,   194,   205,   217,   232,   233,   239,   245,   253,   254,
+     258,   259,   263,   264,   271,   272,   276,   277,   278,   282,
+     283,   289
 };
 #endif
 
@@ -1127,69 +1142,69 @@ yydestruct (yymsg, yytype, yyvaluep)
   switch (yytype)
     {
       case 3: /* "CHAR_CONST" */
-#line 49 "qfeparser.ypp"
-	{ delete (yyvaluep->cp); };
-#line 1133 "qfeparser.cpp"
-	break;
-      case 4: /* "RELOP" */
-#line 49 "qfeparser.ypp"
-	{ delete (yyvaluep->cp); };
-#line 1138 "qfeparser.cpp"
-	break;
-      case 5: /* "LOGICOP" */
-#line 49 "qfeparser.ypp"
-	{ delete (yyvaluep->cp); };
-#line 1143 "qfeparser.cpp"
-	break;
-      case 10: /* "OBJNAME" */
-#line 49 "qfeparser.ypp"
+#line 64 "qfeparser.ypp"
 	{ delete (yyvaluep->cp); };
 #line 1148 "qfeparser.cpp"
 	break;
-      case 11: /* "INT_CONST" */
-#line 49 "qfeparser.ypp"
+      case 4: /* "RELOP" */
+#line 64 "qfeparser.ypp"
 	{ delete (yyvaluep->cp); };
 #line 1153 "qfeparser.cpp"
 	break;
-      case 16: /* "AS" */
-#line 49 "qfeparser.ypp"
+      case 5: /* "LOGICOP" */
+#line 64 "qfeparser.ypp"
 	{ delete (yyvaluep->cp); };
 #line 1158 "qfeparser.cpp"
 	break;
-      case 17: /* "FUNC" */
-#line 49 "qfeparser.ypp"
+      case 10: /* "OBJNAME" */
+#line 64 "qfeparser.ypp"
 	{ delete (yyvaluep->cp); };
 #line 1163 "qfeparser.cpp"
 	break;
-      case 27: /* "select_column_name" */
-#line 50 "qfeparser.ypp"
-	{ delete (yyvaluep->rcp); };
+      case 11: /* "INT_CONST" */
+#line 64 "qfeparser.ypp"
+	{ delete (yyvaluep->cp); };
 #line 1168 "qfeparser.cpp"
 	break;
-      case 28: /* "func_col" */
-#line 50 "qfeparser.ypp"
-	{ delete (yyvaluep->rcp); };
+      case 16: /* "AS" */
+#line 64 "qfeparser.ypp"
+	{ delete (yyvaluep->cp); };
 #line 1173 "qfeparser.cpp"
 	break;
-      case 29: /* "aliased_column_name" */
-#line 50 "qfeparser.ypp"
-	{ delete (yyvaluep->rcp); };
+      case 17: /* "FUNC" */
+#line 64 "qfeparser.ypp"
+	{ delete (yyvaluep->cp); };
 #line 1178 "qfeparser.cpp"
 	break;
-      case 37: /* "obj_name" */
-#line 50 "qfeparser.ypp"
+      case 27: /* "select_column_name" */
+#line 65 "qfeparser.ypp"
 	{ delete (yyvaluep->rcp); };
 #line 1183 "qfeparser.cpp"
 	break;
-      case 39: /* "constant" */
-#line 51 "qfeparser.ypp"
-	{ delete (yyvaluep->cvp); };
+      case 28: /* "func_col" */
+#line 65 "qfeparser.ypp"
+	{ delete (yyvaluep->rcp); };
 #line 1188 "qfeparser.cpp"
 	break;
-      case 42: /* "groupby_item" */
-#line 50 "qfeparser.ypp"
+      case 29: /* "aliased_column_name" */
+#line 65 "qfeparser.ypp"
 	{ delete (yyvaluep->rcp); };
 #line 1193 "qfeparser.cpp"
+	break;
+      case 37: /* "obj_name" */
+#line 65 "qfeparser.ypp"
+	{ delete (yyvaluep->rcp); };
+#line 1198 "qfeparser.cpp"
+	break;
+      case 39: /* "constant" */
+#line 66 "qfeparser.ypp"
+	{ delete (yyvaluep->cvp); };
+#line 1203 "qfeparser.cpp"
+	break;
+      case 42: /* "groupby_item" */
+#line 65 "qfeparser.ypp"
+	{ delete (yyvaluep->rcp); };
+#line 1208 "qfeparser.cpp"
 	break;
 
       default:
@@ -1498,25 +1513,25 @@ yyreduce:
   switch (yyn)
     {
         case 3:
-#line 64 "qfeparser.ypp"
+#line 79 "qfeparser.ypp"
     {
 				execplan::SRCP rcp((yyvsp[(1) - (1)].rcp));
 				ParserCSEP->returnedCols().push_back(rcp);
 				(yyval.cp) = 0;
-			;}
+			}
     break;
 
   case 4:
-#line 70 "qfeparser.ypp"
+#line 85 "qfeparser.ypp"
     {
 				execplan::SRCP rcp((yyvsp[(3) - (3)].rcp));
 				ParserCSEP->returnedCols().push_back(rcp);
 				(yyval.cp) = 0;
-			;}
+			}
     break;
 
   case 5:
-#line 78 "qfeparser.ypp"
+#line 93 "qfeparser.ypp"
     {
 				execplan::SimpleColumn* sc = dynamic_cast<execplan::SimpleColumn*>((yyvsp[(1) - (1)].rcp));
 				if (sc->schemaName() == "infinidb_unknown" && !qfe::DefaultSchema.empty())
@@ -1525,46 +1540,46 @@ yyreduce:
 				sc->tableAlias(sc->tableName());
 				sc->alias(execplan::make_tcn(sc->schemaName(), sc->tableName(), sc->columnName()).toString());
 				(yyval.rcp) = (yyvsp[(1) - (1)].rcp);
-			;}
+			}
     break;
 
   case 7:
-#line 91 "qfeparser.ypp"
+#line 106 "qfeparser.ypp"
     {
 			execplan::AggregateColumn* ag = new execplan::AggregateColumn(execplan::AggregateColumn::agname2num(*((yyvsp[(1) - (4)].cp))), (yyvsp[(3) - (4)].rcp));
 			delete (yyvsp[(1) - (4)].cp);
 			(yyval.rcp) = ag;
-		;}
+		}
     break;
 
   case 9:
-#line 102 "qfeparser.ypp"
-    { (yyval.cp) = 0; ;}
+#line 117 "qfeparser.ypp"
+    { (yyval.cp) = 0; }
     break;
 
   case 10:
-#line 104 "qfeparser.ypp"
+#line 119 "qfeparser.ypp"
     {
 			delete (yyvsp[(2) - (2)].cp);
 			(yyval.cp) = (yyvsp[(1) - (2)].cp);
-		;}
+		}
     break;
 
   case 11:
-#line 109 "qfeparser.ypp"
+#line 124 "qfeparser.ypp"
     {
 			delete (yyvsp[(2) - (2)].cp);
 			(yyval.cp) = (yyvsp[(1) - (2)].cp);
-		;}
+		}
     break;
 
   case 12:
-#line 116 "qfeparser.ypp"
-    { (yyval.cp) = 0; ;}
+#line 131 "qfeparser.ypp"
+    { (yyval.cp) = 0; }
     break;
 
   case 15:
-#line 125 "qfeparser.ypp"
+#line 140 "qfeparser.ypp"
     {
 			execplan::SimpleColumn* sc=0;
 			sc = dynamic_cast<execplan::SimpleColumn*>((yyvsp[(1) - (1)].rcp));
@@ -1581,11 +1596,11 @@ yyreduce:
 			ParserCSEP->tableList(tl);
 			delete sc;
 			(yyval.cp) = 0;
-		;}
+		}
     break;
 
   case 19:
-#line 152 "qfeparser.ypp"
+#line 167 "qfeparser.ypp"
     {
 				pair<int, string> cval = *((yyvsp[(3) - (3)].cvp));
 				delete (yyvsp[(3) - (3)].cvp);
@@ -1596,11 +1611,11 @@ yyreduce:
 				delete sc;
 				delete (yyvsp[(2) - (3)].cp);
 				(yyval.cp) = 0;
-			;}
+			}
     break;
 
   case 20:
-#line 164 "qfeparser.ypp"
+#line 179 "qfeparser.ypp"
     {
 				//string logicop = *($2);
 				delete (yyvsp[(2) - (5)].cp);
@@ -1613,11 +1628,11 @@ yyreduce:
 				delete sc;
 				delete (yyvsp[(4) - (5)].cp);
 				(yyval.cp) = 0;
-			;}
+			}
     break;
 
   case 21:
-#line 180 "qfeparser.ypp"
+#line 195 "qfeparser.ypp"
     {
 			//This is possibly a table name, but we shove it into a SimpleColumn. We'll
 			// fix this in the table_spec production
@@ -1627,11 +1642,11 @@ yyreduce:
 			//cerr << "inside parser: " << *sc << endl;
 			delete (yyvsp[(1) - (1)].cp);
 			(yyval.rcp) = sc;
-		;}
+		}
     break;
 
   case 22:
-#line 191 "qfeparser.ypp"
+#line 206 "qfeparser.ypp"
     {
 			//This is possibly a table name, but we shove it into a SimpleColumn. We'll
 			// fix this in the table_spec production
@@ -1642,11 +1657,11 @@ yyreduce:
 			delete (yyvsp[(1) - (3)].cp);
 			delete (yyvsp[(3) - (3)].cp);
 			(yyval.rcp) = sc;
-		;}
+		}
     break;
 
   case 23:
-#line 203 "qfeparser.ypp"
+#line 218 "qfeparser.ypp"
     {
 			if (qfe::DefaultSchema.empty())
 				qfe::DefaultSchema = *((yyvsp[(1) - (5)].cp));
@@ -1658,84 +1673,84 @@ yyreduce:
 			delete (yyvsp[(3) - (5)].cp);
 			delete (yyvsp[(5) - (5)].cp);
 			(yyval.rcp) = sc;
-		;}
+		}
     break;
 
   case 25:
-#line 219 "qfeparser.ypp"
+#line 234 "qfeparser.ypp"
     {
 			(yyval.cp) = (yyvsp[(2) - (3)].cp);
-		;}
+		}
     break;
 
   case 26:
-#line 225 "qfeparser.ypp"
+#line 240 "qfeparser.ypp"
     {
 			pair<int, string>* p = new pair<int, string>(1, *((yyvsp[(1) - (1)].cp)));
 			delete (yyvsp[(1) - (1)].cp);
 			(yyval.cvp) = p;
-		;}
+		}
     break;
 
   case 27:
-#line 231 "qfeparser.ypp"
+#line 246 "qfeparser.ypp"
     {
 			pair<int, string>* p = new pair<int, string>(0, *((yyvsp[(1) - (1)].cp)));
 			delete (yyvsp[(1) - (1)].cp);
 			(yyval.cvp) = p;
-		;}
+		}
     break;
 
   case 29:
-#line 240 "qfeparser.ypp"
-    { YYERROR; ;}
+#line 255 "qfeparser.ypp"
+    { YYERROR; }
     break;
 
   case 31:
-#line 245 "qfeparser.ypp"
-    { delete (yyvsp[(3) - (3)].rcp); ;}
+#line 260 "qfeparser.ypp"
+    { delete (yyvsp[(3) - (3)].rcp); }
     break;
 
   case 33:
-#line 250 "qfeparser.ypp"
+#line 265 "qfeparser.ypp"
     {
 			delete (yyvsp[(1) - (1)].cp);
 			(yyval.rcp) = 0;
-		;}
+		}
     break;
 
   case 35:
-#line 258 "qfeparser.ypp"
-    { YYERROR; ;}
+#line 273 "qfeparser.ypp"
+    { YYERROR; }
     break;
 
   case 39:
-#line 267 "qfeparser.ypp"
-    { (yyval.cp) = 0; ;}
+#line 282 "qfeparser.ypp"
+    { (yyval.cp) = 0; }
     break;
 
   case 40:
-#line 269 "qfeparser.ypp"
+#line 284 "qfeparser.ypp"
     {
 				delete (yyvsp[(2) - (2)].cp);
 				YYERROR;
 				(yyval.cp) = 0;
-			;}
+			}
     break;
 
   case 41:
-#line 275 "qfeparser.ypp"
+#line 290 "qfeparser.ypp"
     {
 				delete (yyvsp[(2) - (4)].cp);
 				delete (yyvsp[(4) - (4)].cp);
 				YYERROR;
 				(yyval.cp) = 0;
-			;}
+			}
     break;
 
 
 /* Line 1267 of yacc.c.  */
-#line 1739 "qfeparser.cpp"
+#line 1754 "qfeparser.cpp"
       default: break;
     }
   YY_SYMBOL_PRINT ("-> $$ =", yyr1[yyn], &yyval, &yyloc);
@@ -1949,7 +1964,7 @@ yyreturn:
 }
 
 
-#line 283 "qfeparser.ypp"
+#line 298 "qfeparser.ypp"
 
 
 int qfeerror(const string& s)
@@ -1974,4 +1989,5 @@ string* newstr(const char* cp)
 	return strp;
 }
 
+// vim:syntax=yacc:
 
