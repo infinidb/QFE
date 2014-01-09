@@ -17,6 +17,9 @@
 #include <string>
 using namespace std;
 
+#include <boost/shared_ptr.hpp>
+using namespace boost;
+
 #include "constantcolumn.h"
 #include "simplefilter.h"
 #include "calpontsystemcatalog.h"
@@ -52,7 +55,7 @@ ConstantColumn* createConstCol(const string& valstr, T val)
 
 SimpleFilter* createSimpleFilter
 				(
-				CalpontSystemCatalog*& csc,
+				shared_ptr<CalpontSystemCatalog> csc,
 				const CalpontSystemCatalog::TableColName& tcn,
 				const string& opstr,
 				ConstantColumn* cc
@@ -132,7 +135,7 @@ void appendSimpleFilter
 	}
 }
 
-void updateParseTree(execplan::CalpontSystemCatalog*& csc,
+void updateParseTree(shared_ptr<execplan::CalpontSystemCatalog> csc,
 	execplan::CalpontSelectExecutionPlan*& csep,
 	execplan::SimpleColumn* sc,
 	const std::string& relop, pair<int, string> cval)

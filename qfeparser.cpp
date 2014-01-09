@@ -1,24 +1,23 @@
-/* A Bison parser, made by GNU Bison 2.3.  */
+
+/* A Bison parser, made by GNU Bison 2.4.1.  */
 
 /* Skeleton implementation for Bison's Yacc-like parsers in C
-
-   Copyright (C) 1984, 1989, 1990, 2000, 2001, 2002, 2003, 2004, 2005, 2006
+   
+      Copyright (C) 1984, 1989, 1990, 2000, 2001, 2002, 2003, 2004, 2005, 2006
    Free Software Foundation, Inc.
-
-   This program is free software; you can redistribute it and/or modify
+   
+   This program is free software: you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
-   the Free Software Foundation; either version 2, or (at your option)
-   any later version.
-
+   the Free Software Foundation, either version 3 of the License, or
+   (at your option) any later version.
+   
    This program is distributed in the hope that it will be useful,
    but WITHOUT ANY WARRANTY; without even the implied warranty of
    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
    GNU General Public License for more details.
-
+   
    You should have received a copy of the GNU General Public License
-   along with this program; if not, write to the Free Software
-   Foundation, Inc., 51 Franklin Street, Fifth Floor,
-   Boston, MA 02110-1301, USA.  */
+   along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
 
 /* As a special exception, you may create a larger work that contains
    part or all of the Bison parser skeleton and distribute that work
@@ -29,7 +28,7 @@
    special exception, which will cause the skeleton and the resulting
    Bison output files to be licensed under the GNU General Public
    License without this special exception.
-
+   
    This special exception was added by the Free Software Foundation in
    version 2.2 of Bison.  */
 
@@ -47,7 +46,7 @@
 #define YYBISON 1
 
 /* Bison version.  */
-#define YYBISON_VERSION "2.3"
+#define YYBISON_VERSION "2.4.1"
 
 /* Skeleton name.  */
 #define YYSKELETON_NAME "yacc.c"
@@ -55,17 +54,95 @@
 /* Pure parsers.  */
 #define YYPURE 0
 
+/* Push parsers.  */
+#define YYPUSH 0
+
+/* Pull parsers.  */
+#define YYPULL 1
+
 /* Using locations.  */
 #define YYLSP_NEEDED 0
 
 /* Substitute the variable and function names.  */
-#define yyparse qfeparse
-#define yylex   qfelex
-#define yyerror qfeerror
-#define yylval  qfelval
-#define yychar  qfechar
-#define yydebug qfedebug
-#define yynerrs qfenerrs
+#define yyparse         qfeparse
+#define yylex           qfelex
+#define yyerror         qfeerror
+#define yylval          qfelval
+#define yychar          qfechar
+#define yydebug         qfedebug
+#define yynerrs         qfenerrs
+
+
+/* Copy the first part of user declarations.  */
+
+/* Line 189 of yacc.c  */
+#line 1 "qfeparser.ypp"
+
+/* Copyright (C) 2013 Calpont Corp.
+
+   This program is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation; version 2 of the License.
+
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+
+   You should have received a copy of the GNU General Public License along
+   with this program; if not, write to the Free Software Foundation, Inc.,
+   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA. */
+
+#include <iostream>
+#include <string>
+#include <utility>
+using namespace std;
+
+#include <boost/shared_ptr.hpp>
+
+namespace qfe
+{
+extern string DefaultSchema;
+}
+
+int qfeerror(const char *s);
+int qfelex(void);
+
+#include "calpontselectexecutionplan.h"
+#include "simplecolumn.h"
+#include "calpontsystemcatalog.h"
+#include "aggregatecolumn.h"
+execplan::CalpontSelectExecutionPlan* ParserCSEP;
+boost::shared_ptr<execplan::CalpontSystemCatalog> ParserCSC;
+namespace execplan
+{
+class ReturnedColumn;
+}
+
+#include "cseputils.h"
+
+
+
+/* Line 189 of yacc.c  */
+#line 128 "qfeparser.cpp"
+
+/* Enabling traces.  */
+#ifndef YYDEBUG
+# define YYDEBUG 0
+#endif
+
+/* Enabling verbose error messages.  */
+#ifdef YYERROR_VERBOSE
+# undef YYERROR_VERBOSE
+# define YYERROR_VERBOSE 1
+#else
+# define YYERROR_VERBOSE 0
+#endif
+
+/* Enabling the token table.  */
+#ifndef YYTOKEN_TABLE
+# define YYTOKEN_TABLE 0
+#endif
 
 
 /* Tokens.  */
@@ -111,93 +188,33 @@
 
 
 
-/* Copy the first part of user declarations.  */
-#line 1 "qfeparser.ypp"
-
-/* Copyright (C) 2013 Calpont Corp.
-
-   This program is free software; you can redistribute it and/or modify
-   it under the terms of the GNU General Public License as published by
-   the Free Software Foundation; version 2 of the License.
-
-   This program is distributed in the hope that it will be useful,
-   but WITHOUT ANY WARRANTY; without even the implied warranty of
-   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-   GNU General Public License for more details.
-
-   You should have received a copy of the GNU General Public License along
-   with this program; if not, write to the Free Software Foundation, Inc.,
-   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA. */
-
-#include <iostream>
-#include <string>
-#include <utility>
-using namespace std;
-
-namespace qfe
-{
-extern string DefaultSchema;
-}
-
-int qfeerror(const char *s);
-int qfelex(void);
-
-#include "calpontselectexecutionplan.h"
-#include "simplecolumn.h"
-#include "calpontsystemcatalog.h"
-#include "aggregatecolumn.h"
-execplan::CalpontSelectExecutionPlan* ParserCSEP;
-execplan::CalpontSystemCatalog* ParserCSC;
-namespace execplan
-{
-class ReturnedColumn;
-}
-
-#include "cseputils.h"
-
-
-
-/* Enabling traces.  */
-#ifndef YYDEBUG
-# define YYDEBUG 0
-#endif
-
-/* Enabling verbose error messages.  */
-#ifdef YYERROR_VERBOSE
-# undef YYERROR_VERBOSE
-# define YYERROR_VERBOSE 1
-#else
-# define YYERROR_VERBOSE 0
-#endif
-
-/* Enabling the token table.  */
-#ifndef YYTOKEN_TABLE
-# define YYTOKEN_TABLE 0
-#endif
-
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
 typedef union YYSTYPE
-#line 46 "qfeparser.ypp"
 {
+
+/* Line 214 of yacc.c  */
+#line 48 "qfeparser.ypp"
+
 	execplan::ReturnedColumn* rcp;
 	std::string* cp;
 	std::pair<int, std::string>* cvp;
-}
-/* Line 193 of yacc.c.  */
-#line 188 "qfeparser.cpp"
-	YYSTYPE;
+
+
+
+/* Line 214 of yacc.c  */
+#line 206 "qfeparser.cpp"
+} YYSTYPE;
+# define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
 # define YYSTYPE_IS_DECLARED 1
-# define YYSTYPE_IS_TRIVIAL 1
 #endif
-
 
 
 /* Copy the second part of user declarations.  */
 
 
-/* Line 216 of yacc.c.  */
-#line 201 "qfeparser.cpp"
+/* Line 264 of yacc.c  */
+#line 218 "qfeparser.cpp"
 
 #ifdef short
 # undef short
@@ -272,14 +289,14 @@ typedef short int yytype_int16;
 #if (defined __STDC__ || defined __C99__FUNC__ \
      || defined __cplusplus || defined _MSC_VER)
 static int
-YYID (int i)
+YYID (int yyi)
 #else
 static int
-YYID (i)
-    int i;
+YYID (yyi)
+    int yyi;
 #endif
 {
-  return i;
+  return yyi;
 }
 #endif
 
@@ -360,9 +377,9 @@ void free (void *); /* INFRINGES ON USER NAME SPACE */
 /* A type that is properly aligned for any stack member.  */
 union yyalloc
 {
-  yytype_int16 yyss;
-  YYSTYPE yyvs;
-  };
+  yytype_int16 yyss_alloc;
+  YYSTYPE yyvs_alloc;
+};
 
 /* The size of the maximum gap between one aligned stack and the next.  */
 # define YYSTACK_GAP_MAXIMUM (sizeof (union yyalloc) - 1)
@@ -396,12 +413,12 @@ union yyalloc
    elements in the stack, and YYPTR gives the new location of the
    stack.  Advance YYPTR to a properly aligned location for the next
    stack.  */
-# define YYSTACK_RELOCATE(Stack)					\
+# define YYSTACK_RELOCATE(Stack_alloc, Stack)				\
     do									\
       {									\
 	YYSIZE_T yynewbytes;						\
-	YYCOPY (&yyptr->Stack, Stack, yysize);				\
-	Stack = &yyptr->Stack;						\
+	YYCOPY (&yyptr->Stack_alloc, Stack, yysize);			\
+	Stack = &yyptr->Stack_alloc;					\
 	yynewbytes = yystacksize * sizeof (*Stack) + YYSTACK_GAP_MAXIMUM; \
 	yyptr += yynewbytes / sizeof (*yyptr);				\
       }									\
@@ -495,11 +512,11 @@ static const yytype_int8 yyrhs[] =
 /* YYRLINE[YYN] -- source line where rule number YYN was defined.  */
 static const yytype_uint16 yyrline[] =
 {
-       0,    70,    70,    78,    84,    92,   102,   105,   113,   117,
-     118,   123,   131,   132,   135,   139,   159,   162,   163,   166,
-     178,   194,   205,   217,   232,   233,   239,   245,   253,   254,
-     258,   259,   263,   264,   271,   272,   276,   277,   278,   282,
-     283,   289
+       0,    72,    72,    80,    86,    94,   104,   107,   115,   119,
+     120,   125,   133,   134,   137,   141,   161,   164,   165,   168,
+     180,   196,   207,   219,   234,   235,   241,   247,   255,   256,
+     260,   261,   265,   266,   273,   274,   278,   279,   280,   284,
+     285,   291
 };
 #endif
 
@@ -818,17 +835,20 @@ yy_symbol_print (yyoutput, yytype, yyvaluep)
 #if (defined __STDC__ || defined __C99__FUNC__ \
      || defined __cplusplus || defined _MSC_VER)
 static void
-yy_stack_print (yytype_int16 *bottom, yytype_int16 *top)
+yy_stack_print (yytype_int16 *yybottom, yytype_int16 *yytop)
 #else
 static void
-yy_stack_print (bottom, top)
-    yytype_int16 *bottom;
-    yytype_int16 *top;
+yy_stack_print (yybottom, yytop)
+    yytype_int16 *yybottom;
+    yytype_int16 *yytop;
 #endif
 {
   YYFPRINTF (stderr, "Stack now");
-  for (; bottom <= top; ++bottom)
-    YYFPRINTF (stderr, " %d", *bottom);
+  for (; yybottom <= yytop; yybottom++)
+    {
+      int yybot = *yybottom;
+      YYFPRINTF (stderr, " %d", yybot);
+    }
   YYFPRINTF (stderr, "\n");
 }
 
@@ -862,11 +882,11 @@ yy_reduce_print (yyvsp, yyrule)
   /* The symbols being reduced.  */
   for (yyi = 0; yyi < yynrhs; yyi++)
     {
-      fprintf (stderr, "   $%d = ", yyi + 1);
+      YYFPRINTF (stderr, "   $%d = ", yyi + 1);
       yy_symbol_print (stderr, yyrhs[yyprhs[yyrule] + yyi],
 		       &(yyvsp[(yyi + 1) - (yynrhs)])
 		       		       );
-      fprintf (stderr, "\n");
+      YYFPRINTF (stderr, "\n");
     }
 }
 
@@ -1142,79 +1162,129 @@ yydestruct (yymsg, yytype, yyvaluep)
   switch (yytype)
     {
       case 3: /* "CHAR_CONST" */
-#line 64 "qfeparser.ypp"
+
+/* Line 1000 of yacc.c  */
+#line 66 "qfeparser.ypp"
 	{ delete (yyvaluep->cp); };
-#line 1148 "qfeparser.cpp"
+
+/* Line 1000 of yacc.c  */
+#line 1172 "qfeparser.cpp"
 	break;
       case 4: /* "RELOP" */
-#line 64 "qfeparser.ypp"
+
+/* Line 1000 of yacc.c  */
+#line 66 "qfeparser.ypp"
 	{ delete (yyvaluep->cp); };
-#line 1153 "qfeparser.cpp"
+
+/* Line 1000 of yacc.c  */
+#line 1181 "qfeparser.cpp"
 	break;
       case 5: /* "LOGICOP" */
-#line 64 "qfeparser.ypp"
+
+/* Line 1000 of yacc.c  */
+#line 66 "qfeparser.ypp"
 	{ delete (yyvaluep->cp); };
-#line 1158 "qfeparser.cpp"
+
+/* Line 1000 of yacc.c  */
+#line 1190 "qfeparser.cpp"
 	break;
       case 10: /* "OBJNAME" */
-#line 64 "qfeparser.ypp"
+
+/* Line 1000 of yacc.c  */
+#line 66 "qfeparser.ypp"
 	{ delete (yyvaluep->cp); };
-#line 1163 "qfeparser.cpp"
+
+/* Line 1000 of yacc.c  */
+#line 1199 "qfeparser.cpp"
 	break;
       case 11: /* "INT_CONST" */
-#line 64 "qfeparser.ypp"
+
+/* Line 1000 of yacc.c  */
+#line 66 "qfeparser.ypp"
 	{ delete (yyvaluep->cp); };
-#line 1168 "qfeparser.cpp"
+
+/* Line 1000 of yacc.c  */
+#line 1208 "qfeparser.cpp"
 	break;
       case 16: /* "AS" */
-#line 64 "qfeparser.ypp"
+
+/* Line 1000 of yacc.c  */
+#line 66 "qfeparser.ypp"
 	{ delete (yyvaluep->cp); };
-#line 1173 "qfeparser.cpp"
+
+/* Line 1000 of yacc.c  */
+#line 1217 "qfeparser.cpp"
 	break;
       case 17: /* "FUNC" */
-#line 64 "qfeparser.ypp"
+
+/* Line 1000 of yacc.c  */
+#line 66 "qfeparser.ypp"
 	{ delete (yyvaluep->cp); };
-#line 1178 "qfeparser.cpp"
+
+/* Line 1000 of yacc.c  */
+#line 1226 "qfeparser.cpp"
 	break;
       case 27: /* "select_column_name" */
-#line 65 "qfeparser.ypp"
+
+/* Line 1000 of yacc.c  */
+#line 67 "qfeparser.ypp"
 	{ delete (yyvaluep->rcp); };
-#line 1183 "qfeparser.cpp"
+
+/* Line 1000 of yacc.c  */
+#line 1235 "qfeparser.cpp"
 	break;
       case 28: /* "func_col" */
-#line 65 "qfeparser.ypp"
+
+/* Line 1000 of yacc.c  */
+#line 67 "qfeparser.ypp"
 	{ delete (yyvaluep->rcp); };
-#line 1188 "qfeparser.cpp"
+
+/* Line 1000 of yacc.c  */
+#line 1244 "qfeparser.cpp"
 	break;
       case 29: /* "aliased_column_name" */
-#line 65 "qfeparser.ypp"
+
+/* Line 1000 of yacc.c  */
+#line 67 "qfeparser.ypp"
 	{ delete (yyvaluep->rcp); };
-#line 1193 "qfeparser.cpp"
+
+/* Line 1000 of yacc.c  */
+#line 1253 "qfeparser.cpp"
 	break;
       case 37: /* "obj_name" */
-#line 65 "qfeparser.ypp"
+
+/* Line 1000 of yacc.c  */
+#line 67 "qfeparser.ypp"
 	{ delete (yyvaluep->rcp); };
-#line 1198 "qfeparser.cpp"
+
+/* Line 1000 of yacc.c  */
+#line 1262 "qfeparser.cpp"
 	break;
       case 39: /* "constant" */
-#line 66 "qfeparser.ypp"
+
+/* Line 1000 of yacc.c  */
+#line 68 "qfeparser.ypp"
 	{ delete (yyvaluep->cvp); };
-#line 1203 "qfeparser.cpp"
+
+/* Line 1000 of yacc.c  */
+#line 1271 "qfeparser.cpp"
 	break;
       case 42: /* "groupby_item" */
-#line 65 "qfeparser.ypp"
+
+/* Line 1000 of yacc.c  */
+#line 67 "qfeparser.ypp"
 	{ delete (yyvaluep->rcp); };
-#line 1208 "qfeparser.cpp"
+
+/* Line 1000 of yacc.c  */
+#line 1280 "qfeparser.cpp"
 	break;
 
       default:
 	break;
     }
 }
-
 
 /* Prevent warnings from -Wmissing-prototypes.  */
-
 #ifdef YYPARSE_PARAM
 #if defined __STDC__ || defined __cplusplus
 int yyparse (void *YYPARSE_PARAM);
@@ -1230,11 +1300,10 @@ int yyparse ();
 #endif /* ! YYPARSE_PARAM */
 
 
-
-/* The look-ahead symbol.  */
+/* The lookahead symbol.  */
 int yychar;
 
-/* The semantic value of the look-ahead symbol.  */
+/* The semantic value of the lookahead symbol.  */
 YYSTYPE yylval;
 
 /* Number of syntax errors so far.  */
@@ -1242,9 +1311,9 @@ int yynerrs;
 
 
 
-/*----------.
-| yyparse.  |
-`----------*/
+/*-------------------------.
+| yyparse or yypush_parse.  |
+`-------------------------*/
 
 #ifdef YYPARSE_PARAM
 #if (defined __STDC__ || defined __C99__FUNC__ \
@@ -1268,14 +1337,39 @@ yyparse ()
 #endif
 #endif
 {
-  
-  int yystate;
+
+
+    int yystate;
+    /* Number of tokens to shift before error messages enabled.  */
+    int yyerrstatus;
+
+    /* The stacks and their tools:
+       `yyss': related to states.
+       `yyvs': related to semantic values.
+
+       Refer to the stacks thru separate pointers, to allow yyoverflow
+       to reallocate them elsewhere.  */
+
+    /* The state stack.  */
+    yytype_int16 yyssa[YYINITDEPTH];
+    yytype_int16 *yyss;
+    yytype_int16 *yyssp;
+
+    /* The semantic value stack.  */
+    YYSTYPE yyvsa[YYINITDEPTH];
+    YYSTYPE *yyvs;
+    YYSTYPE *yyvsp;
+
+    YYSIZE_T yystacksize;
+
   int yyn;
   int yyresult;
-  /* Number of tokens to shift before error messages enabled.  */
-  int yyerrstatus;
-  /* Look-ahead token as an internal (translated) token number.  */
-  int yytoken = 0;
+  /* Lookahead token as an internal (translated) token number.  */
+  int yytoken;
+  /* The variables used to return semantic value and location from the
+     action routines.  */
+  YYSTYPE yyval;
+
 #if YYERROR_VERBOSE
   /* Buffer for error messages, and its allocated size.  */
   char yymsgbuf[128];
@@ -1283,51 +1377,28 @@ yyparse ()
   YYSIZE_T yymsg_alloc = sizeof yymsgbuf;
 #endif
 
-  /* Three stacks and their tools:
-     `yyss': related to states,
-     `yyvs': related to semantic values,
-     `yyls': related to locations.
-
-     Refer to the stacks thru separate pointers, to allow yyoverflow
-     to reallocate them elsewhere.  */
-
-  /* The state stack.  */
-  yytype_int16 yyssa[YYINITDEPTH];
-  yytype_int16 *yyss = yyssa;
-  yytype_int16 *yyssp;
-
-  /* The semantic value stack.  */
-  YYSTYPE yyvsa[YYINITDEPTH];
-  YYSTYPE *yyvs = yyvsa;
-  YYSTYPE *yyvsp;
-
-
-
 #define YYPOPSTACK(N)   (yyvsp -= (N), yyssp -= (N))
-
-  YYSIZE_T yystacksize = YYINITDEPTH;
-
-  /* The variables used to return semantic value and location from the
-     action routines.  */
-  YYSTYPE yyval;
-
 
   /* The number of symbols on the RHS of the reduced rule.
      Keep to zero when no symbol should be popped.  */
   int yylen = 0;
+
+  yytoken = 0;
+  yyss = yyssa;
+  yyvs = yyvsa;
+  yystacksize = YYINITDEPTH;
 
   YYDPRINTF ((stderr, "Starting parse\n"));
 
   yystate = 0;
   yyerrstatus = 0;
   yynerrs = 0;
-  yychar = YYEMPTY;		/* Cause a token to be read.  */
+  yychar = YYEMPTY; /* Cause a token to be read.  */
 
   /* Initialize stack pointers.
      Waste one element of value and location stack
      so that they stay on the same level as the state stack.
      The wasted elements are never initialized.  */
-
   yyssp = yyss;
   yyvsp = yyvs;
 
@@ -1357,7 +1428,6 @@ yyparse ()
 	YYSTYPE *yyvs1 = yyvs;
 	yytype_int16 *yyss1 = yyss;
 
-
 	/* Each stack pointer address is followed by the size of the
 	   data in use in that stack, in bytes.  This used to be a
 	   conditional around just the two extra args, but that might
@@ -1365,7 +1435,6 @@ yyparse ()
 	yyoverflow (YY_("memory exhausted"),
 		    &yyss1, yysize * sizeof (*yyssp),
 		    &yyvs1, yysize * sizeof (*yyvsp),
-
 		    &yystacksize);
 
 	yyss = yyss1;
@@ -1388,9 +1457,8 @@ yyparse ()
 	  (union yyalloc *) YYSTACK_ALLOC (YYSTACK_BYTES (yystacksize));
 	if (! yyptr)
 	  goto yyexhaustedlab;
-	YYSTACK_RELOCATE (yyss);
-	YYSTACK_RELOCATE (yyvs);
-
+	YYSTACK_RELOCATE (yyss_alloc, yyss);
+	YYSTACK_RELOCATE (yyvs_alloc, yyvs);
 #  undef YYSTACK_RELOCATE
 	if (yyss1 != yyssa)
 	  YYSTACK_FREE (yyss1);
@@ -1401,7 +1469,6 @@ yyparse ()
       yyssp = yyss + yysize - 1;
       yyvsp = yyvs + yysize - 1;
 
-
       YYDPRINTF ((stderr, "Stack size increased to %lu\n",
 		  (unsigned long int) yystacksize));
 
@@ -1411,6 +1478,9 @@ yyparse ()
 
   YYDPRINTF ((stderr, "Entering state %d\n", yystate));
 
+  if (yystate == YYFINAL)
+    YYACCEPT;
+
   goto yybackup;
 
 /*-----------.
@@ -1419,16 +1489,16 @@ yyparse ()
 yybackup:
 
   /* Do appropriate processing given the current state.  Read a
-     look-ahead token if we need one and don't already have one.  */
+     lookahead token if we need one and don't already have one.  */
 
-  /* First try to decide what to do without reference to look-ahead token.  */
+  /* First try to decide what to do without reference to lookahead token.  */
   yyn = yypact[yystate];
   if (yyn == YYPACT_NINF)
     goto yydefault;
 
-  /* Not known => get a look-ahead token if don't already have one.  */
+  /* Not known => get a lookahead token if don't already have one.  */
 
-  /* YYCHAR is either YYEMPTY or YYEOF or a valid look-ahead symbol.  */
+  /* YYCHAR is either YYEMPTY or YYEOF or a valid lookahead symbol.  */
   if (yychar == YYEMPTY)
     {
       YYDPRINTF ((stderr, "Reading a token: "));
@@ -1460,20 +1530,16 @@ yybackup:
       goto yyreduce;
     }
 
-  if (yyn == YYFINAL)
-    YYACCEPT;
-
   /* Count tokens shifted since error; after three, turn off error
      status.  */
   if (yyerrstatus)
     yyerrstatus--;
 
-  /* Shift the look-ahead token.  */
+  /* Shift the lookahead token.  */
   YY_SYMBOL_PRINT ("Shifting", yytoken, &yylval, &yylloc);
 
-  /* Discard the shifted token unless it is eof.  */
-  if (yychar != YYEOF)
-    yychar = YYEMPTY;
+  /* Discard the shifted token.  */
+  yychar = YYEMPTY;
 
   yystate = yyn;
   *++yyvsp = yylval;
@@ -1513,7 +1579,9 @@ yyreduce:
   switch (yyn)
     {
         case 3:
-#line 79 "qfeparser.ypp"
+
+/* Line 1455 of yacc.c  */
+#line 81 "qfeparser.ypp"
     {
 				execplan::SRCP rcp((yyvsp[(1) - (1)].rcp));
 				ParserCSEP->returnedCols().push_back(rcp);
@@ -1522,7 +1590,9 @@ yyreduce:
     break;
 
   case 4:
-#line 85 "qfeparser.ypp"
+
+/* Line 1455 of yacc.c  */
+#line 87 "qfeparser.ypp"
     {
 				execplan::SRCP rcp((yyvsp[(3) - (3)].rcp));
 				ParserCSEP->returnedCols().push_back(rcp);
@@ -1531,7 +1601,9 @@ yyreduce:
     break;
 
   case 5:
-#line 93 "qfeparser.ypp"
+
+/* Line 1455 of yacc.c  */
+#line 95 "qfeparser.ypp"
     {
 				execplan::SimpleColumn* sc = dynamic_cast<execplan::SimpleColumn*>((yyvsp[(1) - (1)].rcp));
 				if (sc->schemaName() == "infinidb_unknown" && !qfe::DefaultSchema.empty())
@@ -1544,7 +1616,9 @@ yyreduce:
     break;
 
   case 7:
-#line 106 "qfeparser.ypp"
+
+/* Line 1455 of yacc.c  */
+#line 108 "qfeparser.ypp"
     {
 			execplan::AggregateColumn* ag = new execplan::AggregateColumn(execplan::AggregateColumn::agname2num(*((yyvsp[(1) - (4)].cp))), (yyvsp[(3) - (4)].rcp));
 			delete (yyvsp[(1) - (4)].cp);
@@ -1553,12 +1627,16 @@ yyreduce:
     break;
 
   case 9:
-#line 117 "qfeparser.ypp"
+
+/* Line 1455 of yacc.c  */
+#line 119 "qfeparser.ypp"
     { (yyval.cp) = 0; }
     break;
 
   case 10:
-#line 119 "qfeparser.ypp"
+
+/* Line 1455 of yacc.c  */
+#line 121 "qfeparser.ypp"
     {
 			delete (yyvsp[(2) - (2)].cp);
 			(yyval.cp) = (yyvsp[(1) - (2)].cp);
@@ -1566,7 +1644,9 @@ yyreduce:
     break;
 
   case 11:
-#line 124 "qfeparser.ypp"
+
+/* Line 1455 of yacc.c  */
+#line 126 "qfeparser.ypp"
     {
 			delete (yyvsp[(2) - (2)].cp);
 			(yyval.cp) = (yyvsp[(1) - (2)].cp);
@@ -1574,12 +1654,16 @@ yyreduce:
     break;
 
   case 12:
-#line 131 "qfeparser.ypp"
+
+/* Line 1455 of yacc.c  */
+#line 133 "qfeparser.ypp"
     { (yyval.cp) = 0; }
     break;
 
   case 15:
-#line 140 "qfeparser.ypp"
+
+/* Line 1455 of yacc.c  */
+#line 142 "qfeparser.ypp"
     {
 			execplan::SimpleColumn* sc=0;
 			sc = dynamic_cast<execplan::SimpleColumn*>((yyvsp[(1) - (1)].rcp));
@@ -1600,7 +1684,9 @@ yyreduce:
     break;
 
   case 19:
-#line 167 "qfeparser.ypp"
+
+/* Line 1455 of yacc.c  */
+#line 169 "qfeparser.ypp"
     {
 				pair<int, string> cval = *((yyvsp[(3) - (3)].cvp));
 				delete (yyvsp[(3) - (3)].cvp);
@@ -1615,7 +1701,9 @@ yyreduce:
     break;
 
   case 20:
-#line 179 "qfeparser.ypp"
+
+/* Line 1455 of yacc.c  */
+#line 181 "qfeparser.ypp"
     {
 				//string logicop = *($2);
 				delete (yyvsp[(2) - (5)].cp);
@@ -1632,7 +1720,9 @@ yyreduce:
     break;
 
   case 21:
-#line 195 "qfeparser.ypp"
+
+/* Line 1455 of yacc.c  */
+#line 197 "qfeparser.ypp"
     {
 			//This is possibly a table name, but we shove it into a SimpleColumn. We'll
 			// fix this in the table_spec production
@@ -1646,7 +1736,9 @@ yyreduce:
     break;
 
   case 22:
-#line 206 "qfeparser.ypp"
+
+/* Line 1455 of yacc.c  */
+#line 208 "qfeparser.ypp"
     {
 			//This is possibly a table name, but we shove it into a SimpleColumn. We'll
 			// fix this in the table_spec production
@@ -1661,7 +1753,9 @@ yyreduce:
     break;
 
   case 23:
-#line 218 "qfeparser.ypp"
+
+/* Line 1455 of yacc.c  */
+#line 220 "qfeparser.ypp"
     {
 			if (qfe::DefaultSchema.empty())
 				qfe::DefaultSchema = *((yyvsp[(1) - (5)].cp));
@@ -1677,14 +1771,18 @@ yyreduce:
     break;
 
   case 25:
-#line 234 "qfeparser.ypp"
+
+/* Line 1455 of yacc.c  */
+#line 236 "qfeparser.ypp"
     {
 			(yyval.cp) = (yyvsp[(2) - (3)].cp);
 		}
     break;
 
   case 26:
-#line 240 "qfeparser.ypp"
+
+/* Line 1455 of yacc.c  */
+#line 242 "qfeparser.ypp"
     {
 			pair<int, string>* p = new pair<int, string>(1, *((yyvsp[(1) - (1)].cp)));
 			delete (yyvsp[(1) - (1)].cp);
@@ -1693,7 +1791,9 @@ yyreduce:
     break;
 
   case 27:
-#line 246 "qfeparser.ypp"
+
+/* Line 1455 of yacc.c  */
+#line 248 "qfeparser.ypp"
     {
 			pair<int, string>* p = new pair<int, string>(0, *((yyvsp[(1) - (1)].cp)));
 			delete (yyvsp[(1) - (1)].cp);
@@ -1702,17 +1802,23 @@ yyreduce:
     break;
 
   case 29:
-#line 255 "qfeparser.ypp"
+
+/* Line 1455 of yacc.c  */
+#line 257 "qfeparser.ypp"
     { YYERROR; }
     break;
 
   case 31:
-#line 260 "qfeparser.ypp"
+
+/* Line 1455 of yacc.c  */
+#line 262 "qfeparser.ypp"
     { delete (yyvsp[(3) - (3)].rcp); }
     break;
 
   case 33:
-#line 265 "qfeparser.ypp"
+
+/* Line 1455 of yacc.c  */
+#line 267 "qfeparser.ypp"
     {
 			delete (yyvsp[(1) - (1)].cp);
 			(yyval.rcp) = 0;
@@ -1720,17 +1826,23 @@ yyreduce:
     break;
 
   case 35:
-#line 273 "qfeparser.ypp"
+
+/* Line 1455 of yacc.c  */
+#line 275 "qfeparser.ypp"
     { YYERROR; }
     break;
 
   case 39:
-#line 282 "qfeparser.ypp"
+
+/* Line 1455 of yacc.c  */
+#line 284 "qfeparser.ypp"
     { (yyval.cp) = 0; }
     break;
 
   case 40:
-#line 284 "qfeparser.ypp"
+
+/* Line 1455 of yacc.c  */
+#line 286 "qfeparser.ypp"
     {
 				delete (yyvsp[(2) - (2)].cp);
 				YYERROR;
@@ -1739,7 +1851,9 @@ yyreduce:
     break;
 
   case 41:
-#line 290 "qfeparser.ypp"
+
+/* Line 1455 of yacc.c  */
+#line 292 "qfeparser.ypp"
     {
 				delete (yyvsp[(2) - (4)].cp);
 				delete (yyvsp[(4) - (4)].cp);
@@ -1749,8 +1863,9 @@ yyreduce:
     break;
 
 
-/* Line 1267 of yacc.c.  */
-#line 1754 "qfeparser.cpp"
+
+/* Line 1455 of yacc.c  */
+#line 1869 "qfeparser.cpp"
       default: break;
     }
   YY_SYMBOL_PRINT ("-> $$ =", yyr1[yyn], &yyval, &yyloc);
@@ -1760,7 +1875,6 @@ yyreduce:
   YY_STACK_PRINT (yyss, yyssp);
 
   *++yyvsp = yyval;
-
 
   /* Now `shift' the result of the reduction.  Determine what state
      that goes to, based on the state we popped back to and the rule
@@ -1826,7 +1940,7 @@ yyerrlab:
 
   if (yyerrstatus == 3)
     {
-      /* If just tried and failed to reuse look-ahead token after an
+      /* If just tried and failed to reuse lookahead token after an
 	 error, discard it.  */
 
       if (yychar <= YYEOF)
@@ -1843,7 +1957,7 @@ yyerrlab:
 	}
     }
 
-  /* Else will try to reuse look-ahead token after shifting the error
+  /* Else will try to reuse lookahead token after shifting the error
      token.  */
   goto yyerrlab1;
 
@@ -1900,9 +2014,6 @@ yyerrlab1:
       YY_STACK_PRINT (yyss, yyssp);
     }
 
-  if (yyn == YYFINAL)
-    YYACCEPT;
-
   *++yyvsp = yylval;
 
 
@@ -1927,7 +2038,7 @@ yyabortlab:
   yyresult = 1;
   goto yyreturn;
 
-#ifndef yyoverflow
+#if !defined(yyoverflow) || YYERROR_VERBOSE
 /*-------------------------------------------------.
 | yyexhaustedlab -- memory exhaustion comes here.  |
 `-------------------------------------------------*/
@@ -1938,7 +2049,7 @@ yyexhaustedlab:
 #endif
 
 yyreturn:
-  if (yychar != YYEOF && yychar != YYEMPTY)
+  if (yychar != YYEMPTY)
      yydestruct ("Cleanup: discarding lookahead",
 		 yytoken, &yylval);
   /* Do not reclaim the symbols of the rule which action triggered
@@ -1964,7 +2075,9 @@ yyreturn:
 }
 
 
-#line 298 "qfeparser.ypp"
+
+/* Line 1675 of yacc.c  */
+#line 300 "qfeparser.ypp"
 
 
 int qfeerror(const string& s)
