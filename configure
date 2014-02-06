@@ -5918,9 +5918,9 @@ fi
 done
 
 
-infinidb_include='$(HOME)/genii/export/include'
+infinidb_include='$(prefix)/Calpont/include'
 
-infinidb_lib='$(HOME)/genii/export/lib'
+infinidb_lib='$(prefix)/Calpont/lib'
 
 
           ac_config_files="$ac_config_files Makefile"

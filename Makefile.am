@@ -56,6 +56,8 @@ QFE_LDFLAGS =  -L$(infinidb_lib) \
 	-lloggingcpp \
 	-lmulticast \
 	-lidbboot \
+	-lpthread \
+	-lrt \
 	-lxml2 \
 	-ldl
 cli_SOURCES = cli.cpp socketio.cpp
