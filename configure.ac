@@ -48,8 +48,8 @@ AC_FUNC_REALLOC
 AC_FUNC_STRERROR_R
 AC_CHECK_FUNCS([dup2 memset socket strerror])
 
-AC_SUBST([infinidb_include], ['$(HOME)/genii/export/include'])
-AC_SUBST([infinidb_lib], ['$(HOME)/genii/export/lib'])
+AC_SUBST([infinidb_include], ['$(prefix)/Calpont/include'])
+AC_SUBST([infinidb_lib], ['$(prefix)/Calpont/lib'])
 
 AC_CONFIG_FILES([Makefile])
 AC_OUTPUT

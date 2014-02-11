@@ -19,6 +19,8 @@
 #include <utility>
 using namespace std;
 
+#include <boost/shared_ptr.hpp>
+
 namespace qfe
 {
 extern string DefaultSchema;
@@ -32,7 +34,7 @@ int qfelex(void);
 #include "calpontsystemcatalog.h"
 #include "aggregatecolumn.h"
 execplan::CalpontSelectExecutionPlan* ParserCSEP;
-execplan::CalpontSystemCatalog* ParserCSC;
+boost::shared_ptr<execplan::CalpontSystemCatalog> ParserCSC;
 namespace execplan
 {
 class ReturnedColumn;

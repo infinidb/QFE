@@ -17,6 +17,7 @@
 #define QFE_CSEPUTILS_H__
 
 #include <string>
+#include <boost/shared_ptr.hpp>
 
 namespace execplan
 {
@@ -38,7 +39,7 @@ execplan::ConstantColumn* createConstCol(const std::string& valstr, T val);
 
 execplan::SimpleFilter* createSimpleFilter
 				(
-				execplan::CalpontSystemCatalog*& csc,
+				boost::shared_ptr<execplan::CalpontSystemCatalog> csc,
 				const execplan::CalpontSystemCatalog::TableColName& tcn,
 				const std::string& opstr,
 				execplan::ConstantColumn* cc
@@ -50,7 +51,7 @@ void appendSimpleFilter
 				execplan::SimpleFilter* filter
 				);
 
-void updateParseTree(execplan::CalpontSystemCatalog*&,
+void updateParseTree(boost::shared_ptr<execplan::CalpontSystemCatalog>,
 	execplan::CalpontSelectExecutionPlan*&,
 	execplan::SimpleColumn*,
 	const std::string&, pair<int, string>);
