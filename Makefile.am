@@ -54,6 +54,8 @@ QFE_LDFLAGS =  -L$(infinidb_lib) \
 	-lquerystats \
 	-loamcpp \
 	-lloggingcpp \
+	-lquerytele \
+	-lthrift \
 	-lidbboot \
 	-lpthread \
 	-lrt \
